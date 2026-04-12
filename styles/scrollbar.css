@@ -1,0 +1,44 @@
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--border);
+    border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--border-light);
+}
+
+/* Hide scrollbar until hover */
+.panel {
+    scrollbar-width: thin;
+    scrollbar-color: transparent transparent;
+}
+
+.panel:hover {
+    scrollbar-color: var(--border) transparent;
+}
+
+.panel::-webkit-scrollbar-thumb {
+    background: transparent;
+}
+
+.panel:hover::-webkit-scrollbar-thumb {
+    background: var(--border);
+}
+
+.panel-scroll {
+    scrollbar-width: thin;
+    scrollbar-color: transparent transparent;
+}
+
+.panel-scroll:hover {
+    scrollbar-color: var(--border) transparent;
+}

@@ -1,0 +1,25 @@
+{
+  "name": "theclipboardguy",
+  "version": "0.1.0",
+  "description": "A Windows 11-style clipboard manager for Linux",
+  "private": true,
+  "type": "module",
+  "license": "GPL-3.0-only",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "tauri": "tauri"
+  },
+  "dependencies": {
+    "@tauri-apps/api": "^2",
+    "@tauri-apps/plugin-global-shortcut": "^2",
+    "@tauri-apps/plugin-autostart": "^2",
+    "@tauri-apps/plugin-sql": "^2",
+    "@tauri-apps/plugin-positioner": "^2",
+    "tauri-plugin-clipboard-api": "^2"
+  },
+  "devDependencies": {
+    "@tauri-apps/cli": "^2",
+    "vite": "^6"
+  }
+}

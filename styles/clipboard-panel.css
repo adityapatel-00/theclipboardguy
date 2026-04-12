@@ -1,0 +1,214 @@
+/* Clipboard Panel */
+.clipboard-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+/* Single clipboard item */
+.clip-item {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+    padding: var(--spacing-sm) var(--spacing-md);
+    background: var(--bg-item);
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    position: relative;
+    border: 1px solid transparent;
+}
+
+.clip-item:hover {
+    background: var(--bg-item-hover);
+    border-color: var(--border);
+}
+
+.clip-item.selected {
+    background: var(--accent-dim);
+    border-color: var(--accent);
+}
+
+.clip-item.pinned {
+    border-left: 3px solid var(--accent);
+}
+
+/* Item content preview */
+.clip-content {
+    font-size: var(--font-size-md);
+    color: var(--text-primary);
+    line-height: 1.45;
+    max-height: 60px;
+    overflow: hidden;
+    word-break: break-word;
+}
+
+.clip-content.text-preview {
+    white-space: pre-wrap;
+}
+
+.clip-content.image-preview {
+    max-height: 120px;
+}
+
+.clip-content.image-preview img {
+    max-width: 100%;
+    max-height: 110px;
+    border-radius: var(--radius-sm);
+    object-fit: contain;
+}
+
+.clip-content.html-preview {
+    font-size: var(--font-size-sm);
+    color: var(--text-secondary);
+}
+
+.clip-content.files-preview {
+    font-size: var(--font-size-sm);
+    color: var(--text-secondary);
+}
+
+.clip-content .file-path {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    padding: 2px 0;
+}
+
+.clip-content .file-icon {
+    font-size: 12px;
+}
+
+/* Item metadata row */
+.clip-meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--spacing-sm);
+}
+
+.clip-meta-left {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    min-width: 0;
+}
+
+.clip-type-badge {
+    font-size: var(--font-size-xs);
+    padding: 1px 6px;
+    border-radius: var(--radius-xs);
+    background: var(--bg-tertiary);
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    font-weight: 600;
+    flex-shrink: 0;
+}
+
+.clip-time {
+    font-size: var(--font-size-xs);
+    color: var(--text-muted);
+    flex-shrink: 0;
+}
+
+.clip-source {
+    font-size: var(--font-size-xs);
+    color: var(--text-muted);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* Item action buttons */
+.clip-actions {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    opacity: 0;
+    transition: opacity var(--transition-fast);
+    flex-shrink: 0;
+}
+
+.clip-item:hover .clip-actions {
+    opacity: 1;
+}
+
+.clip-action-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    border-radius: var(--radius-xs);
+    color: var(--text-muted);
+    transition: all var(--transition-fast);
+}
+
+.clip-action-btn:hover {
+    background: var(--bg-hover);
+    color: var(--text-primary);
+}
+
+.clip-action-btn.pin-active {
+    color: var(--accent);
+}
+
+.clip-action-btn.delete:hover {
+    color: var(--danger);
+}
+
+.clip-action-btn svg {
+    width: 14px;
+    height: 14px;
+    fill: currentColor;
+}
+
+/* Paste as text indicator */
+.paste-text-btn:hover {
+    color: var(--success);
+}
+
+/* Divider between pinned and recent */
+.clip-divider {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-xs) 0;
+    margin: var(--spacing-xs) 0;
+}
+
+.clip-divider::before,
+.clip-divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+}
+
+.clip-divider-text {
+    font-size: var(--font-size-xs);
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-weight: 600;
+}
+
+/* Clear all button in header area */
+.clip-header-actions {
+    display: flex;
+    justify-content: flex-end;
+    padding: var(--spacing-xs) 0;
+}
+
+.clear-all-btn {
+    font-size: var(--font-size-xs);
+    color: var(--accent-text);
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border-radius: var(--radius-sm);
+    transition: all var(--transition-fast);
+}
+
+.clear-all-btn:hover {
+    background: var(--accent-dim);
+}

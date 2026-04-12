@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Clipboard Guy</title>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles/main.css" />
+    <link rel="stylesheet" href="styles/scrollbar.css" />
+    <link rel="stylesheet" href="styles/animations.css" />
+    <link rel="stylesheet" href="styles/layout.css" />
+    <link rel="stylesheet" href="styles/tab-bar.css" />
+    <link rel="stylesheet" href="styles/search-bar.css" />
+    <link rel="stylesheet" href="styles/clipboard-panel.css" />
+    <link rel="stylesheet" href="styles/emoji-panel.css" />
+    <link rel="stylesheet" href="styles/gif-panel.css" />
+    <link rel="stylesheet" href="styles/kaomoji-panel.css" />
+    <link rel="stylesheet" href="styles/symbols-panel.css" />
+    <link rel="stylesheet" href="styles/settings-panel.css" />
+    <link rel="stylesheet" href="styles/context-menu.css" />
+    <link rel="stylesheet" href="styles/toast.css" />
+</head>
+<body>
+    <div id="app">
+        <!-- Tab Bar -->
+        <nav id="tab-bar"></nav>
+
+        <!-- Search Bar -->
+        <div id="search-bar-container"></div>
+
+        <!-- Panel Container -->
+        <main id="panel-container">
+            <div id="clipboard-panel" class="panel active"></div>
+            <div id="emoji-panel" class="panel"></div>
+            <div id="gif-panel" class="panel"></div>
+            <div id="kaomoji-panel" class="panel"></div>
+            <div id="symbols-panel" class="panel"></div>
+            <div id="settings-panel" class="panel"></div>
+        </main>
+
+        <!-- Toast Container -->
+        <div id="toast-container"></div>
+
+        <!-- Context Menu -->
+        <div id="context-menu" class="context-menu hidden"></div>
+    </div>
+
+    <!-- App Entry -->
+    <script type="module" src="src/main.js"></script>
+</body>
+</html>

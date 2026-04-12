@@ -1,0 +1,162 @@
+/* Theme Tokens & Reset */
+:root {
+    /* Dark theme (default) - Windows 11 clipboard aesthetic */
+    --bg-primary: #202020;
+    --bg-secondary: #2d2d2d;
+    --bg-tertiary: #383838;
+    --bg-hover: #3d3d3d;
+    --bg-active: #4a4a4a;
+    --bg-item: #2d2d2d;
+    --bg-item-hover: #353535;
+    --bg-input: #1a1a1a;
+
+    --text-primary: #ffffff;
+    --text-secondary: #c0c0c0;
+    --text-muted: #808080;
+    --text-placeholder: #666666;
+
+    --accent: #60cdff;
+    --accent-hover: #4cb8e8;
+    --accent-dim: rgba(96, 205, 255, 0.15);
+    --accent-text: #60cdff;
+
+    --danger: #ff6b6b;
+    --danger-hover: #ff5252;
+    --success: #7bed9f;
+    --warning: #ffa502;
+
+    --border: #3d3d3d;
+    --border-light: #4a4a4a;
+    --border-focus: #60cdff;
+
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.4);
+    --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.5);
+    --shadow-popup: 0 8px 40px rgba(0, 0, 0, 0.6);
+
+    --radius-xs: 3px;
+    --radius-sm: 6px;
+    --radius-md: 8px;
+    --radius-lg: 12px;
+    --radius-xl: 16px;
+
+    --font-family: 'Segoe UI', system-ui, -apple-system, 'Noto Sans', sans-serif;
+    --font-mono: 'Cascadia Code', 'Consolas', 'SF Mono', monospace;
+    --font-size-xs: 11px;
+    --font-size-sm: 12px;
+    --font-size-md: 13px;
+    --font-size-lg: 14px;
+    --font-size-xl: 16px;
+
+    --transition-fast: 100ms ease;
+    --transition-normal: 180ms ease;
+    --transition-slow: 300ms ease;
+
+    --spacing-xs: 4px;
+    --spacing-sm: 8px;
+    --spacing-md: 12px;
+    --spacing-lg: 16px;
+    --spacing-xl: 20px;
+
+    --header-height: 44px;
+    --search-height: 36px;
+}
+
+[data-theme="light"] {
+    --bg-primary: #f0f0f0;
+    --bg-secondary: #ffffff;
+    --bg-tertiary: #f5f5f5;
+    --bg-hover: #e8e8e8;
+    --bg-active: #d0d0d0;
+    --bg-item: #ffffff;
+    --bg-item-hover: #f5f5f5;
+    --bg-input: #ffffff;
+
+    --text-primary: #1a1a1a;
+    --text-secondary: #555555;
+    --text-muted: #999999;
+    --text-placeholder: #aaaaaa;
+
+    --accent: #0078d4;
+    --accent-hover: #106ebe;
+    --accent-dim: rgba(0, 120, 212, 0.1);
+    --accent-text: #0078d4;
+
+    --border: #e0e0e0;
+    --border-light: #eeeeee;
+    --border-focus: #0078d4;
+
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
+    --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.12);
+    --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.16);
+    --shadow-popup: 0 8px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* Reset */
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    font-family: var(--font-family);
+    font-size: var(--font-size-md);
+    color: var(--text-primary);
+    background: transparent;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    user-select: none;
+}
+
+#app {
+    height: 100%;
+    width: 100%;
+    background: var(--bg-primary);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow-popup);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+/* Utility classes */
+.hidden { display: none !important; }
+.flex { display: flex; }
+.flex-col { flex-direction: column; }
+.flex-center { align-items: center; justify-content: center; }
+.flex-between { justify-content: space-between; }
+.gap-xs { gap: var(--spacing-xs); }
+.gap-sm { gap: var(--spacing-sm); }
+.gap-md { gap: var(--spacing-md); }
+.truncate { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+button {
+    font-family: inherit;
+    border: none;
+    background: none;
+    cursor: pointer;
+    color: inherit;
+    font-size: inherit;
+}
+
+input {
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+}
+
+a {
+    color: var(--accent-text);
+    text-decoration: none;
+}
+
+/* Selection color */
+::selection {
+    background: var(--accent-dim);
+    color: var(--text-primary);
+}

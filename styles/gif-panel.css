@@ -1,0 +1,97 @@
+/* GIF Panel */
+#gif-panel.active {
+    display: block;
+    overflow-y: auto;
+}
+
+.gif-grid {
+    column-count: 2;
+    column-gap: var(--spacing-xs);
+    padding: var(--spacing-xs);
+}
+
+.gif-item {
+    break-inside: avoid;
+    margin-bottom: var(--spacing-xs);
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    position: relative;
+}
+
+.gif-item:hover {
+    transform: scale(1.02);
+    box-shadow: var(--shadow-sm);
+}
+
+.gif-item img {
+    width: 100%;
+    display: block;
+    border-radius: var(--radius-sm);
+    background: var(--bg-tertiary);
+}
+
+/* GIF loading placeholder */
+.gif-item.loading {
+    min-height: 100px;
+    background: var(--bg-tertiary);
+}
+
+/* Tenor attribution */
+.tenor-attribution {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--spacing-sm);
+    font-size: var(--font-size-xs);
+    color: var(--text-muted);
+    gap: var(--spacing-xs);
+}
+
+.tenor-attribution img {
+    height: 14px;
+    opacity: 0.5;
+}
+
+/* Load more trigger */
+.gif-load-more {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--spacing-lg);
+    color: var(--text-muted);
+    font-size: var(--font-size-sm);
+}
+
+/* GIF search results info */
+.gif-results-info {
+    font-size: var(--font-size-xs);
+    color: var(--text-muted);
+    padding: var(--spacing-xs) var(--spacing-sm);
+}
+
+/* No API key state */
+.gif-api-prompt {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-md);
+    padding: var(--spacing-xl);
+    text-align: center;
+}
+
+.gif-api-prompt-btn {
+    padding: var(--spacing-sm) var(--spacing-lg);
+    background: var(--accent);
+    color: #000;
+    border-radius: var(--radius-md);
+    font-size: var(--font-size-sm);
+    font-weight: 600;
+    transition: all var(--transition-fast);
+}
+
+.gif-api-prompt-btn:hover {
+    background: var(--accent-hover);
+}

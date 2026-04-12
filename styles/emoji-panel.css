@@ -1,0 +1,48 @@
+/* Emoji Panel */
+#emoji-panel .category-tabs {
+    padding: var(--spacing-xs);
+}
+
+.emoji-grid {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    gap: 2px;
+    padding: var(--spacing-xs);
+}
+
+.emoji-grid > .empty-state {
+    grid-column: 1 / -1;
+}
+
+.emoji-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 38px;
+    border-radius: var(--radius-sm);
+    font-size: 24px;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    line-height: 1;
+}
+
+.emoji-item:hover {
+    background: var(--bg-hover);
+    transform: scale(1.15);
+}
+
+.emoji-item:active {
+    transform: scale(0.95);
+}
+
+/* Emoji skin tone selector (future) */
+.emoji-item.has-variants {
+    position: relative;
+}
+
+/* Recently used section */
+.emoji-recent-section {
+    padding-bottom: var(--spacing-sm);
+    border-bottom: 1px solid var(--border);
+    margin-bottom: var(--spacing-sm);
+}

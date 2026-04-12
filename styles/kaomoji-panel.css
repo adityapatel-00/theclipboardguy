@@ -1,0 +1,67 @@
+/* Kaomoji Panel */
+.kaomoji-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    padding: var(--spacing-xs);
+}
+
+.kaomoji-item {
+    display: flex;
+    align-items: center;
+    padding: var(--spacing-sm) var(--spacing-md);
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    font-size: var(--font-size-lg);
+    font-family: var(--font-family);
+    color: var(--text-primary);
+}
+
+.kaomoji-item:hover {
+    background: var(--bg-hover);
+}
+
+.kaomoji-item:active {
+    background: var(--bg-active);
+    transform: scale(0.98);
+}
+
+/* Kaomoji category section */
+.kaomoji-section {
+    margin-bottom: var(--spacing-sm);
+}
+
+.kaomoji-section-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--spacing-sm) var(--spacing-sm);
+    cursor: pointer;
+    border-radius: var(--radius-sm);
+    transition: background var(--transition-fast);
+}
+
+.kaomoji-section-header:hover {
+    background: var(--bg-hover);
+}
+
+.kaomoji-section-title {
+    font-size: var(--font-size-sm);
+    font-weight: 600;
+    color: var(--text-secondary);
+}
+
+.kaomoji-section-toggle {
+    font-size: var(--font-size-xs);
+    color: var(--text-muted);
+    transition: transform var(--transition-fast);
+}
+
+.kaomoji-section.collapsed .kaomoji-section-toggle {
+    transform: rotate(-90deg);
+}
+
+.kaomoji-section.collapsed .kaomoji-list {
+    display: none;
+}

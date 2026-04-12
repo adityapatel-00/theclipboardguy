@@ -1,0 +1,70 @@
+/* Tab Bar */
+#tab-bar {
+    display: flex;
+    align-items: center;
+    height: var(--header-height);
+    padding: 0 var(--spacing-xs);
+    background: var(--bg-secondary);
+    border-bottom: 1px solid var(--border);
+    flex-shrink: 0;
+    gap: 2px;
+    /* Draggable region for moving the window */
+    -webkit-app-region: drag;
+}
+
+.tab-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 32px;
+    border-radius: var(--radius-sm);
+    color: var(--text-muted);
+    transition: all var(--transition-fast);
+    position: relative;
+    -webkit-app-region: no-drag;
+}
+
+.tab-btn:hover {
+    background: var(--bg-hover);
+    color: var(--text-primary);
+}
+
+.tab-btn.active {
+    color: var(--accent-text);
+    background: var(--accent-dim);
+}
+
+.tab-btn.active::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 16px;
+    height: 2px;
+    background: var(--accent);
+    border-radius: 1px;
+}
+
+.tab-btn svg {
+    width: 18px;
+    height: 18px;
+    fill: currentColor;
+}
+
+.tab-btn .tab-emoji {
+    font-size: 16px;
+    line-height: 1;
+}
+
+/* Settings tab pushed to the right */
+.tab-spacer {
+    flex: 1;
+    -webkit-app-region: drag;
+}
+
+/* Tab tooltip */
+.tab-btn[title] {
+    position: relative;
+}
